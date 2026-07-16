@@ -1,0 +1,172 @@
+EN {hasName cad,
+  EN {hasName ModelSpecificDataTypes,
+    DT {hasName UnitType,
+      DV {hasName CM},
+      DV {hasName COUNT},
+      DV {hasName FT},
+      DV {hasName INCH},
+      DV {hasName M},
+      DV {hasName MM},
+      DV {hasName NM},
+      DV {hasName UM}
+    }
+  },
+  EN {hasName O0,
+    EN {hasName BooleanParameter, hasPotency 1,
+      AT {hasName value, hasDurability 1, hasMutability 1, hasDataType BooleanType}
+    },
+    EN {hasName CAD_Model, hasPotency 1,
+      AT {hasName id, hasDurability 1, hasMutability 1, hasDataType StringType},
+      AT {hasName name, hasDurability 1, hasMutability 1, hasDataType StringType}
+    },
+    CA {hasName CA__1,
+      IC {hasName IN__1, hasRelatum Parameter, isGeneralisation true},
+      IC {hasName IN__2, hasRelatum NumericParameter, isGeneralisation false},
+      IC {hasName IN__3, hasRelatum StringParameter, isGeneralisation false},
+      IC {hasName IN__4, hasRelatum BooleanParameter, isGeneralisation false}
+    },
+    EN {hasName Namespace, hasPotency 1,
+      AT {hasName description, hasDurability 1, hasMutability 1, hasDataType StringType},
+      AT {hasName id, hasDurability 1, hasMutability 1, hasDataType StringType},
+      AT {hasName name, hasDurability 1, hasMutability 1, hasDataType StringType}
+    },
+    EN {hasName NumericParameter, hasPotency 1,
+      AT {hasName unit, hasDurability 1, hasMutability 1, hasDataType UnitType},
+      AT {hasName value, hasDurability 1, hasMutability 1, hasDataType FloatType}
+    },
+    EN {hasName Parameter, hasPotency 1,
+      AT {hasName description, hasDurability 1, hasMutability 1, hasDataType StringType},
+      AT {hasName id, hasDurability 1, hasMutability 1, hasDataType StringType},
+      AT {hasName name, hasDurability 1, hasMutability 1, hasDataType StringType}
+    },
+    RE {hasName RE__1, hasPotency 1,
+      PA {hasName PA__1, hasRelatum CAD_Model, hasLowerBound 0, hasUpperBound 1, isOrdered false, isNavigableTo false},
+      PA {hasName namespaces, hasRelatum Namespace, hasLowerBound 0, hasUpperBound unlimited, isOrdered true, isNavigableTo true}
+    },
+    RE {hasName RE__2, hasPotency 1,
+      PA {hasName PA__1, hasRelatum Namespace, hasLowerBound 0, hasUpperBound 1, isOrdered false, isNavigableTo false},
+      PA {hasName parameters, hasRelatum Parameter, hasLowerBound 0, hasUpperBound unlimited, isOrdered true, isNavigableTo true}
+    },
+    EN {hasName StringParameter, hasPotency 1,
+      AT {hasName unit, hasDurability 1, hasMutability 1, hasDataType UnitType},
+      AT {hasName value, hasDurability 1, hasMutability 1, hasDataType StringType}
+    }
+  },
+  EN {hasName O1,
+    EN {hasName EN__1, hasDeclaredType CAD_Model},
+    EN {hasName EN__10, hasDeclaredType BooleanParameter,
+      AT {hasName name, hasDurability 1, hasMutability 1, hasDataType StringType, hasValue Ventilated},
+      AT {hasName value, hasDurability 1, hasMutability 1, hasDataType BooleanType, hasValue true}
+    },
+    EN {hasName EN__11, hasDeclaredType StringParameter,
+      AT {hasName name, hasDurability 1, hasMutability 1, hasDataType StringType, hasValue "OEM Number"},
+      AT {hasName unit, hasDurability 1, hasMutability 1, hasDataType UnitType, hasValue Unit.MM},
+      AT {hasName value, hasDurability 1, hasMutability 1, hasDataType StringType, hasValue VW123456}
+    },
+    EN {hasName EN__12, hasDeclaredType StringParameter,
+      AT {hasName name, hasDurability 1, hasMutability 1, hasDataType StringType, hasValue "Specification Type"},
+      AT {hasName unit, hasDurability 1, hasMutability 1, hasDataType UnitType, hasValue Unit.MM}
+    },
+    EN {hasName EN__13, hasDeclaredType StringParameter,
+      AT {hasName name, hasDurability 1, hasMutability 1, hasDataType StringType, hasValue "Fitting Position"},
+      AT {hasName unit, hasDurability 1, hasMutability 1, hasDataType UnitType, hasValue Unit.MM}
+    },
+    EN {hasName EN__2, hasDeclaredType Namespace,
+      AT {hasName id, hasDurability 1, hasMutability 1, hasDataType StringType, hasValue newId}
+    },
+    EN {hasName EN__3, hasDeclaredType NumericParameter,
+      AT {hasName name, hasDurability 1, hasMutability 1, hasDataType StringType, hasValue Diameter},
+      AT {hasName unit, hasDurability 1, hasMutability 1, hasDataType UnitType, hasValue Unit.MM},
+      AT {hasName value, hasDurability 1, hasMutability 1, hasDataType FloatType, hasValue 120.0}
+    },
+    EN {hasName EN__4, hasDeclaredType NumericParameter,
+      AT {hasName name, hasDurability 1, hasMutability 1, hasDataType StringType, hasValue "Centering Diameter"},
+      AT {hasName unit, hasDurability 1, hasMutability 1, hasDataType UnitType, hasValue Unit.MM},
+      AT {hasName value, hasDurability 1, hasMutability 1, hasDataType FloatType, hasValue 20.0}
+    },
+    EN {hasName EN__5, hasDeclaredType NumericParameter,
+      AT {hasName name, hasDurability 1, hasMutability 1, hasDataType StringType, hasValue "Rim Hole Number"},
+      AT {hasName unit, hasDurability 1, hasMutability 1, hasDataType UnitType, hasValue Unit.COUNT},
+      AT {hasName value, hasDurability 1, hasMutability 1, hasDataType FloatType, hasValue 1.0}
+    },
+    EN {hasName EN__6, hasDeclaredType NumericParameter,
+      AT {hasName name, hasDurability 1, hasMutability 1, hasDataType StringType, hasValue "Hole Arrangement Number"},
+      AT {hasName unit, hasDurability 1, hasMutability 1, hasDataType UnitType, hasValue Unit.MM},
+      AT {hasName value, hasDurability 1, hasMutability 1, hasDataType FloatType, hasValue 20.0}
+    },
+    EN {hasName EN__7, hasDeclaredType NumericParameter,
+      AT {hasName name, hasDurability 1, hasMutability 1, hasDataType StringType, hasValue "Bolt Hole Circle"},
+      AT {hasName unit, hasDurability 1, hasMutability 1, hasDataType UnitType, hasValue Unit.MM},
+      AT {hasName value, hasDurability 1, hasMutability 1, hasDataType FloatType, hasValue 60.0}
+    },
+    EN {hasName EN__8, hasDeclaredType NumericParameter,
+      AT {hasName name, hasDurability 1, hasMutability 1, hasDataType StringType, hasValue "Brake Disk Thickness"},
+      AT {hasName unit, hasDurability 1, hasMutability 1, hasDataType UnitType, hasValue Unit.MM},
+      AT {hasName value, hasDurability 1, hasMutability 1, hasDataType FloatType, hasValue 30.0}
+    },
+    EN {hasName EN__9, hasDeclaredType NumericParameter,
+      AT {hasName name, hasDurability 1, hasMutability 1, hasDataType StringType, hasValue "Minimum Thickness"},
+      AT {hasName unit, hasDurability 1, hasMutability 1, hasDataType UnitType, hasValue Unit.MM},
+      AT {hasName value, hasDurability 1, hasMutability 1, hasDataType FloatType, hasValue 25.0}
+    },
+    RE {hasName RE__1, hasDeclaredType O0.RE__1,
+      PA {hasName PA__1, hasRelatum EN__1, hasLowerBound 1, hasUpperBound 1, isOrdered false, isNavigableTo false},
+      PA {hasName namespaces, hasRelatum EN__2, hasLowerBound 1, hasUpperBound 1, isOrdered true, isNavigableTo true}
+    },
+    RE {hasName RE__10, hasDeclaredType O0.RE__2,
+      PA {hasName PA__1, hasRelatum EN__2, hasLowerBound 1, hasUpperBound 1, isOrdered false, isNavigableTo false},
+      PA {hasName parameters, hasRelatum EN__11, hasLowerBound 1, hasUpperBound 1, isOrdered true, isNavigableTo true}
+    },
+    RE {hasName RE__11, hasDeclaredType O0.RE__2,
+      PA {hasName PA__1, hasRelatum EN__2, hasLowerBound 1, hasUpperBound 1, isOrdered false, isNavigableTo false},
+      PA {hasName parameters, hasRelatum EN__12, hasLowerBound 1, hasUpperBound 1, isOrdered true, isNavigableTo true}
+    },
+    RE {hasName RE__12, hasDeclaredType O0.RE__2,
+      PA {hasName PA__1, hasRelatum EN__2, hasLowerBound 1, hasUpperBound 1, isOrdered false, isNavigableTo false},
+      PA {hasName parameters, hasRelatum EN__13, hasLowerBound 1, hasUpperBound 1, isOrdered true, isNavigableTo true}
+    },
+    RE {hasName RE__2, hasDeclaredType O0.RE__2,
+      PA {hasName PA__1, hasRelatum EN__2, hasLowerBound 1, hasUpperBound 1, isOrdered false, isNavigableTo false},
+      PA {hasName parameters, hasRelatum EN__3, hasLowerBound 1, hasUpperBound 1, isOrdered true, isNavigableTo true}
+    },
+    RE {hasName RE__3, hasDeclaredType O0.RE__2,
+      PA {hasName PA__1, hasRelatum EN__2, hasLowerBound 1, hasUpperBound 1, isOrdered false, isNavigableTo false},
+      PA {hasName parameters, hasRelatum EN__4, hasLowerBound 1, hasUpperBound 1, isOrdered true, isNavigableTo true}
+    },
+    RE {hasName RE__4, hasDeclaredType O0.RE__2,
+      PA {hasName PA__1, hasRelatum EN__2, hasLowerBound 1, hasUpperBound 1, isOrdered false, isNavigableTo false},
+      PA {hasName parameters, hasRelatum EN__5, hasLowerBound 1, hasUpperBound 1, isOrdered true, isNavigableTo true}
+    },
+    RE {hasName RE__5, hasDeclaredType O0.RE__2,
+      PA {hasName PA__1, hasRelatum EN__2, hasLowerBound 1, hasUpperBound 1, isOrdered false, isNavigableTo false},
+      PA {hasName parameters, hasRelatum EN__6, hasLowerBound 1, hasUpperBound 1, isOrdered true, isNavigableTo true}
+    },
+    RE {hasName RE__6, hasDeclaredType O0.RE__2,
+      PA {hasName PA__1, hasRelatum EN__2, hasLowerBound 1, hasUpperBound 1, isOrdered false, isNavigableTo false},
+      PA {hasName parameters, hasRelatum EN__7, hasLowerBound 1, hasUpperBound 1, isOrdered true, isNavigableTo true}
+    },
+    RE {hasName RE__7, hasDeclaredType O0.RE__2,
+      PA {hasName PA__1, hasRelatum EN__2, hasLowerBound 1, hasUpperBound 1, isOrdered false, isNavigableTo false},
+      PA {hasName parameters, hasRelatum EN__8, hasLowerBound 1, hasUpperBound 1, isOrdered true, isNavigableTo true}
+    },
+    RE {hasName RE__8, hasDeclaredType O0.RE__2,
+      PA {hasName PA__1, hasRelatum EN__2, hasLowerBound 1, hasUpperBound 1, isOrdered false, isNavigableTo false},
+      PA {hasName parameters, hasRelatum EN__9, hasLowerBound 1, hasUpperBound 1, isOrdered true, isNavigableTo true}
+    },
+    RE {hasName RE__9, hasDeclaredType O0.RE__2,
+      PA {hasName PA__1, hasRelatum EN__2, hasLowerBound 1, hasUpperBound 1, isOrdered false, isNavigableTo false},
+      PA {hasName parameters, hasRelatum EN__10, hasLowerBound 1, hasUpperBound 1, isOrdered true, isNavigableTo true}
+    }
+  },
+  EN {hasName PredefinedDataTypes,
+    DT {hasName BooleanType},
+    DT {hasName ByteType},
+    DT {hasName CharType},
+    DT {hasName DoubleType},
+    DT {hasName FloatType},
+    DT {hasName IntegerType},
+    DT {hasName LongType},
+    DT {hasName ShortType},
+    DT {hasName StringType}
+  }
+}

@@ -1,0 +1,92 @@
+EN {hasName brakesystem,
+  EN {hasName ModelSpecificDataTypes},
+  EN {hasName O0,
+    EN {hasName ABSSensor, hasPotency 1,
+      AT {hasName fittingDepth, hasDurability 1, hasMutability 1, hasDataType IntegerType},
+      AT {hasName lengthInMM, hasDurability 1, hasMutability 1, hasDataType IntegerType},
+      AT {hasName numberOfPins, hasDurability 1, hasMutability 1, hasDataType IntegerType},
+      AT {hasName sensorType, hasDurability 1, hasMutability 1, hasDataType StringType}
+    },
+    EN {hasName BrakeCaliper, hasPotency 1,
+      AT {hasName brakeDiskThickness, hasDurability 1, hasMutability 1, hasDataType IntegerType},
+      AT {hasName pistonDiameterInMM, hasDurability 1, hasMutability 1, hasDataType IntegerType}
+    },
+    EN {hasName BrakeComponent, hasPotency 1,
+      AT {hasName OEM_number, hasDurability 1, hasMutability 1, hasDataType StringType},
+      AT {hasName fittingPosition, hasDurability 1, hasMutability 1, hasDataType StringType},
+      AT {hasName id, hasDurability 1, hasMutability 1, hasDataType StringType},
+      AT {hasName specificationType, hasDurability 1, hasMutability 1, hasDataType StringType}
+    },
+    EN {hasName BrakeDisk, hasPotency 1,
+      AT {hasName boltHoleCircleInMM, hasDurability 1, hasMutability 1, hasDataType IntegerType},
+      AT {hasName brakeDiskThicknessInMM, hasDurability 1, hasMutability 1, hasDataType IntegerType},
+      AT {hasName centeringDiameterInMM, hasDurability 1, hasMutability 1, hasDataType IntegerType},
+      AT {hasName diameterInMM, hasDurability 1, hasMutability 1, hasDataType IntegerType},
+      AT {hasName holeArrangementNumber, hasDurability 1, hasMutability 1, hasDataType IntegerType},
+      AT {hasName minimumThicknessInMM, hasDurability 1, hasMutability 1, hasDataType IntegerType},
+      AT {hasName rimHoleNumber, hasDurability 1, hasMutability 1, hasDataType IntegerType},
+      AT {hasName ventilated, hasDurability 1, hasMutability 1, hasDataType BooleanType}
+    },
+    EN {hasName BrakeHose, hasPotency 1,
+      AT {hasName lengthInMM, hasDurability 1, hasMutability 1, hasDataType IntegerType},
+      AT {hasName threadSize1, hasDurability 1, hasMutability 1, hasDataType StringType},
+      AT {hasName threadSize2, hasDurability 1, hasMutability 1, hasDataType StringType}
+    },
+    EN {hasName BrakePad, hasPotency 1,
+      AT {hasName heightInMM, hasDurability 1, hasMutability 1, hasDataType IntegerType},
+      AT {hasName thicknessInMM, hasDurability 1, hasMutability 1, hasDataType IntegerType},
+      AT {hasName wearWarning, hasDurability 1, hasMutability 1, hasDataType BooleanType},
+      AT {hasName widthInMM, hasDurability 1, hasMutability 1, hasDataType IntegerType}
+    },
+    EN {hasName Brakesystem, hasPotency 1,
+      AT {hasName instanceName, hasDurability 1, hasMutability 1, hasDataType StringType},
+      AT {hasName specificationType, hasDurability 1, hasMutability 1, hasDataType StringType}
+    },
+    CA {hasName CA__1,
+      IC {hasName IN__1, hasRelatum BrakeComponent, isGeneralisation true},
+      IC {hasName IN__2, hasRelatum BrakeDisk, isGeneralisation false},
+      IC {hasName IN__3, hasRelatum BrakePad, isGeneralisation false},
+      IC {hasName IN__4, hasRelatum BrakeCaliper, isGeneralisation false},
+      IC {hasName IN__5, hasRelatum ABSSensor, isGeneralisation false},
+      IC {hasName IN__6, hasRelatum BrakeHose, isGeneralisation false}
+    },
+    RE {hasName RE__1, hasPotency 1,
+      PA {hasName PA__1, hasRelatum BrakeCaliper, hasLowerBound 0, hasUpperBound 1, isOrdered false, isNavigableTo false},
+      PA {hasName brakePads, hasRelatum BrakePad, hasLowerBound 0, hasUpperBound unlimited, isOrdered true, isNavigableTo true}
+    },
+    RE {hasName RE__2, hasPotency 1,
+      PA {hasName BrakeComponents, hasRelatum BrakeComponent, hasLowerBound 0, hasUpperBound unlimited, isOrdered true, isNavigableTo true},
+      PA {hasName PA__1, hasRelatum Brakesystem, hasLowerBound 0, hasUpperBound 1, isOrdered false, isNavigableTo false}
+    }
+  },
+  EN {hasName O1,
+    EN {hasName EN__1, hasDeclaredType Brakesystem},
+    EN {hasName EN__2, hasDeclaredType BrakeDisk,
+      AT {hasName OEM_number, hasDurability 1, hasMutability 1, hasDataType StringType, hasValue VW123456},
+      AT {hasName boltHoleCircleInMM, hasDurability 1, hasMutability 1, hasDataType IntegerType, hasValue 60},
+      AT {hasName brakeDiskThicknessInMM, hasDurability 1, hasMutability 1, hasDataType IntegerType, hasValue 30},
+      AT {hasName centeringDiameterInMM, hasDurability 1, hasMutability 1, hasDataType IntegerType, hasValue 20},
+      AT {hasName diameterInMM, hasDurability 1, hasMutability 1, hasDataType IntegerType, hasValue 120},
+      AT {hasName holeArrangementNumber, hasDurability 1, hasMutability 1, hasDataType IntegerType, hasValue 20},
+      AT {hasName id, hasDurability 1, hasMutability 1, hasDataType StringType, hasValue newId},
+      AT {hasName minimumThicknessInMM, hasDurability 1, hasMutability 1, hasDataType IntegerType, hasValue 25},
+      AT {hasName rimHoleNumber, hasDurability 1, hasMutability 1, hasDataType IntegerType, hasValue 1},
+      AT {hasName ventilated, hasDurability 1, hasMutability 1, hasDataType BooleanType, hasValue true}
+    },
+    RE {hasName RE__1, hasDeclaredType RE__2,
+      PA {hasName BrakeComponents, hasRelatum EN__2, hasLowerBound 1, hasUpperBound 1, isOrdered true, isNavigableTo true},
+      PA {hasName PA__1, hasRelatum EN__1, hasLowerBound 1, hasUpperBound 1, isOrdered false, isNavigableTo false}
+    }
+  },
+  EN {hasName PredefinedDataTypes,
+    DT {hasName BooleanType},
+    DT {hasName ByteType},
+    DT {hasName CharType},
+    DT {hasName DoubleType},
+    DT {hasName FloatType},
+    DT {hasName IntegerType},
+    DT {hasName LongType},
+    DT {hasName ShortType},
+    DT {hasName StringType}
+  }
+}
