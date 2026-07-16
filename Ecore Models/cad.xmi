@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ASCII"?>
+<cad:CAD_Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cad="http://www.example.org/cad">
+  <namespaces id="newId">
+    <parameters xsi:type="cad:NumericParameter" name="Diameter" value="120.0"/>
+    <parameters xsi:type="cad:NumericParameter" name="Centering Diameter" value="20.0"/>
+    <parameters xsi:type="cad:NumericParameter" name="Rim Hole Number" value="1.0" unit="COUNT"/>
+    <parameters xsi:type="cad:NumericParameter" name="Hole Arrangement Number" value="20.0"/>
+    <parameters xsi:type="cad:NumericParameter" name="Bolt Hole Circle" value="60.0"/>
+    <parameters xsi:type="cad:NumericParameter" name="Brake Disk Thickness" value="30.0"/>
+    <parameters xsi:type="cad:NumericParameter" name="Minimum Thickness" value="25.0"/>
+    <parameters xsi:type="cad:BooleanParameter" name="Ventilated" value="true"/>
+    <parameters xsi:type="cad:StringParameter" name="OEM Number" value="VW123456"/>
+    <parameters xsi:type="cad:StringParameter" name="Specification Type"/>
+    <parameters xsi:type="cad:StringParameter" name="Fitting Position"/>
+  </namespaces>
+</cad:CAD_Model>

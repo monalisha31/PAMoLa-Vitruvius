@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="ASCII"?>
+<brakesystem:Brakesystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:brakesystem="http://www.example.org/brakesystem">
+  <BrakeComponents xsi:type="brakesystem:BrakeDisk" OEM_number="VW123456" id="newId" diameterInMM="120" centeringDiameterInMM="20" rimHoleNumber="1" holeArrangementNumber="20" boltHoleCircleInMM="60" brakeDiskThicknessInMM="30" minimumThicknessInMM="25" ventilated="true"/>
+</brakesystem:Brakesystem>
