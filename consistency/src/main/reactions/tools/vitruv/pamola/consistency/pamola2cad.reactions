@@ -1,0 +1,89 @@
+import java.io.File;
+
+import tools.vitruv.pamola.cad.Unit;
+import tools.vitruv.pamola.cad.NumericParameter;
+import tools.vitruv.pamola.pem.Attribute;
+
+import "https://pamola.org/kernel/pem/1.0" as pamola
+import "http://www.example.org/cad" as cad
+
+reactions: pamola2cad
+in reaction to changes in pamola
+execute actions in cad
+
+// (1) The PEM domain root becomes the CAD_Model.
+reaction PamolaRootInserted {
+  after element pamola::Entity inserted as root
+  call createCadModel(newValue)
+}
+
+routine createCadModel(pamola::Entity domainRoot) {
+  match {
+    require absence of cad::CAD_Model corresponding to domainRoot
+  }
+  create {
+    val mCad = new cad::CAD_Model
+  }
+  update {
+    persistProjectRelative(domainRoot, mCad, new File("").toString() + "example.cad")
+    addCorrespondenceBetween(domainRoot, mCad)
+  }
+}
+
+// (2) An entity that gains a declared type is a component *instance*: give it a
+// CAD Namespace. Structural trigger (Entity gets a hasDeclaredType), not a
+// domain-typed one.
+reaction InstanceTyped {
+  after element pamola::Clabject replaced at pamola::Entity[hasDeclaredType]
+  call createNamespaceForInstance(affectedEObject)
+}
+
+routine createNamespaceForInstance(pamola::Entity instance) {
+  match {
+    val mCad = retrieve cad::CAD_Model corresponding to instance.eContainer
+    require absence of cad::Namespace corresponding to instance
+  }
+  create {
+    val ns = new cad::Namespace
+  }
+  update {
+    ns.id = instance.hasName
+    mCad.namespaces.add(ns)
+    addCorrespondenceBetween(instance, ns)
+  }
+}
+
+// (3) The generic value mirror: any Integer attribute value change on any
+// instance is the SAME structural event -- a reified IntegerValueOccurrence's
+// value replaced. One reaction covers every integer feature of every component.
+reaction IntegerValueChanged {
+  after attribute replaced at pamola::IntegerValueOccurrence[value]
+  call mirrorIntegerValue(affectedEObject)
+}
+
+routine mirrorIntegerValue(pamola::IntegerValueOccurrence iv) {
+  match {
+    val ns = retrieve cad::Namespace corresponding to iv.eContainer.eContainer
+  }
+  create {
+    val np = new cad::NumericParameter
+  }
+  update {
+    // walk value -> owning Attribute -> per-feature knowledge (display name)
+    val attr = iv.eContainer as Attribute
+    val cadName = switch (attr.hasName) {
+      case "minimumThicknessInMM": "Minimum Thickness"
+      case "brakeDiskThicknessInMM": "Brake Disk Thickness"
+      case "diameterInMM": "Diameter"
+      default: attr.hasName
+    }
+    var p = ns.parameters.findFirst[name == cadName] as NumericParameter
+    if (p === null) {
+      p = np
+      p.name = cadName
+      p.unit = Unit.MM
+      ns.parameters.add(p)
+    }
+    p.setValue(iv.value)
+  }
+}

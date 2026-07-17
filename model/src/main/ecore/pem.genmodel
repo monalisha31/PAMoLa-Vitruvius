@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/tools.vitruv.methodologisttemplate.model/target/generated-sources/ecore" creationIcons="false" modelPluginID="tools.vitruv.methodologisttemplate.model" modelName="Pem" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="17.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>pem.ecore</foreignModel>
+  <genPackages prefix="Pem" basePackage="tools.vitruv.pamola" disposableProviderFactory="true">
+    <ecorePackage href="pem.ecore#/"/>
+    <genDataTypes>
+      <ecoreDataType href="pem.ecore#//ELocalDate"/>
+    </genDataTypes>
+    <genDataTypes>
+      <ecoreDataType href="pem.ecore#//EOffsetDateTime"/>
+    </genDataTypes>
+    <genDataTypes>
+      <ecoreDataType href="pem.ecore#//EOffsetTime"/>
+    </genDataTypes>
+    <genDataTypes>
+      <ecoreDataType href="pem.ecore#//EDuration"/>
+    </genDataTypes>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//Ordium"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Ordium/follows"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Ordium/hasCustodian"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Ordium/wards"/>
+      </genFeatures>
+      <genFeatures property="Readonly" createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="pem.ecore#//Ordium/hasFQN"/>
+      </genFeatures>
+      <genFeatures property="Readonly" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Ordium/hasLinguisticType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="pem.ecore#//Ordium/hasName"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="pem.ecore#//Ordium/hasNote"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="pem.ecore#//Ordium/hasPID"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//Action"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Action/hasResult"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Action/hasTarget"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Action/hasTimeStamp"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Action/invokes"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Action/requestedBy"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//Argument"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Argument/bindsTo"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Argument/fills"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//Artifact"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Artifact/describes"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Artifact/hasByteSize"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Artifact/hasChecksum"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Artifact/hasLocator"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//Atom"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Atom/hasPredicate"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Atom/isExplicit"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Atom/isNegated"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//Attribute"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Attribute/hasDataType"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Attribute/hasValue"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="pem.ecore#//BehaviouralOrdium"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//Categorisation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Categorisation/isComplete"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Categorisation/isDisjoint"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="pem.ecore#//Clabject"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Clabject/hasDeclaredType"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Clabject/hasPotency"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//DataType"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="pem.ecore#//DataValue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//DataValue/ofDataType"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//Entity"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="pem.ecore#//ImmanentOrdium"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//Intercalation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Intercalation/isGeneralisation"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//Invocation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Invocation/calls"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//Literal"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Literal/hasLexeme"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//Marker"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Marker/hasTag"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Marker/refersTo"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="pem.ecore#//Mediation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Mediation/hasRelatum"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//Method"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Method/isRealisedBy"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="pem.ecore#//Moment"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Moment/hasDurability"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Moment/hasMutability"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//Operation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Operation/hasReturnType"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//Parameter"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Parameter/hasType"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Parameter/isExistential"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//Participation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Participation/hasLowerBound"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Participation/hasRoleName"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Participation/hasUpperBound"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Participation/isNavigableTo"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Participation/isOrdered"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Participation/isUnique"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//Relationship"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="pem.ecore#//Relationship/hasAssociationName"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="pem.ecore#//TranscendentOrdium"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//BinaryValueOccurrence"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="pem.ecore#//BinaryValueOccurrence/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//ByteValueOccurrence"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="pem.ecore#//ByteValueOccurrence/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//CharacterValueOccurrence"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="pem.ecore#//CharacterValueOccurrence/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//DateValueOccurrence"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="pem.ecore#//DateValueOccurrence/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//DateTimeValueOccurrence"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="pem.ecore#//DateTimeValueOccurrence/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//DecimalValueOccurrence"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="pem.ecore#//DecimalValueOccurrence/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//DurationValueOccurrence"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="pem.ecore#//DurationValueOccurrence/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//FQNValueOccurrence"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="pem.ecore#//FQNValueOccurrence/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//Float32ValueOccurrence"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="pem.ecore#//Float32ValueOccurrence/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//Float64ValueOccurrence"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="pem.ecore#//Float64ValueOccurrence/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//IRIValueOccurrence"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="pem.ecore#//IRIValueOccurrence/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//IntegerValueOccurrence"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="pem.ecore#//IntegerValueOccurrence/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//MultiplicityValueOccurrence"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="pem.ecore#//MultiplicityValueOccurrence/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//NameValueOccurrence"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="pem.ecore#//NameValueOccurrence/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//NonNegativeIntegerValueOccurrence"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="pem.ecore#//NonNegativeIntegerValueOccurrence/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//PIDValueOccurrence"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="pem.ecore#//PIDValueOccurrence/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//StringValueOccurrence"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="pem.ecore#//StringValueOccurrence/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//TimeValueOccurrence"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="pem.ecore#//TimeValueOccurrence/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//DefinedDataValue"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="pem.ecore#//TupleDataValue"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

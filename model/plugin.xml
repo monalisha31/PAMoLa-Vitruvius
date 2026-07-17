@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pem -->
+      <package
+            uri="https://pamola.org/kernel/pem/1.0"
+            class="tools.vitruv.pamola.pem.PemPackage"
+            genModel="src/main/ecore/pem.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated cad -->
+      <package
+            uri="http://www.example.org/cad"
+            class="tools.vitruv.pamola.cad.CadPackage"
+            genModel="src/main/ecore/cad.genmodel"/>
+   </extension>
+
+</plugin>

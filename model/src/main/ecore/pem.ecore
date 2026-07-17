@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="pem" nsURI="https://pamola.org/kernel/pem/1.0" nsPrefix="pem">
+  <eClassifiers xsi:type="ecore:EClass" name="Ordium">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="follows" eType="#//Ordium">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Ordium"/>
+        <details key="seedOptional" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasCustodian" eType="#//Ordium" eOpposite="#//Ordium/wards">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Ordium"/>
+        <details key="seedOptional" value="false"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="wards" ordered="false" upperBound="-1" eType="#//Ordium" containment="true"
+        eOpposite="#//Ordium/hasCustodian">
+      <eAnnotations source="pem">
+        <details key="projection" value="custody navigation; not a PAMoLa property"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hasFQN" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" transient="true" derived="true">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="FQN"/>
+        <details key="seedOptional" value="false"/>
+        <details key="seedDefault" value="&lt;derived>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasLinguisticType" eType="#//Ordium" changeable="false" transient="true"
+        derived="true">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Ordium"/>
+        <details key="seedOptional" value="false"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hasName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Name"/>
+        <details key="seedOptional" value="false"/>
+        <details key="seedDefault" value="&lt;auto created>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hasNote" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="String"/>
+        <details key="seedOptional" value="false"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hasPID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="PID"/>
+        <details key="seedOptional" value="false"/>
+        <details key="seedDefault" value="&lt;auto created>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//BehaviouralOrdium">
+    <eAnnotations source="pem">
+      <details key="badge" value="AC"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasResult" eType="#//Ordium">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Ordium"/>
+        <details key="seedOptional" value="false"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasTarget" eType="#//Ordium">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Ordium"/>
+        <details key="seedOptional" value="false"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasTimeStamp" eType="#//DataValue">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="DateTime"/>
+        <details key="seedOptional" value="false"/>
+        <details key="seedDefault" value="§"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="invokes" eType="#//Ordium">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Ordium"/>
+        <details key="seedOptional" value="false"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requestedBy" eType="#//Ordium">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Ordium"/>
+        <details key="seedOptional" value="false"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Argument" eSuperTypes="#//BehaviouralOrdium">
+    <eAnnotations source="pem">
+      <details key="badge" value="AG"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bindsTo" eType="#//Ordium">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Ordium"/>
+        <details key="seedOptional" value="false"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fills" eType="#//Parameter">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Parameter"/>
+        <details key="seedOptional" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Artifact" eSuperTypes="#//TranscendentOrdium">
+    <eAnnotations source="pem">
+      <details key="badge" value="AF"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="describes" eType="#//Ordium">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Ordium"/>
+        <details key="seedOptional" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasByteSize" eType="#//DataValue">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="NonNegativeInteger"/>
+        <details key="seedOptional" value="false"/>
+        <details key="seedDefault" value="§"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasChecksum" eType="#//DataValue">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="String"/>
+        <details key="seedOptional" value="false"/>
+        <details key="seedDefault" value="§"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasLocator" eType="#//DataValue">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="IRI"/>
+        <details key="seedOptional" value="false"/>
+        <details key="seedDefault" value="§"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Atom" eSuperTypes="#//BehaviouralOrdium">
+    <eAnnotations source="pem">
+      <details key="badge" value="AO"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasPredicate" eType="#//Ordium">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Ordium"/>
+        <details key="seedOptional" value="false"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isExplicit" eType="#//DataValue">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Boolean"/>
+        <details key="seedOptional" value="false"/>
+        <details key="seedDefault" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isNegated" eType="#//DataValue">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Boolean"/>
+        <details key="seedOptional" value="false"/>
+        <details key="seedDefault" value="false"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//Moment">
+    <eAnnotations source="pem">
+      <details key="badge" value="AT"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasDataType" eType="#//DataType">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="DataType"/>
+        <details key="seedOptional" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasValue" eType="#//DataValue">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="DataValue"/>
+        <details key="seedOptional" value="false"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BehaviouralOrdium" abstract="true" eSuperTypes="#//Ordium"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Categorisation" eSuperTypes="#//ImmanentOrdium">
+    <eAnnotations source="pem">
+      <details key="badge" value="CA"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isComplete" eType="#//DataValue">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Boolean"/>
+        <details key="seedOptional" value="false"/>
+        <details key="seedDefault" value="false"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isDisjoint" eType="#//DataValue">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Boolean"/>
+        <details key="seedOptional" value="false"/>
+        <details key="seedDefault" value="false"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Clabject" abstract="true" eSuperTypes="#//ImmanentOrdium">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasDeclaredType" eType="#//Clabject">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Clabject"/>
+        <details key="seedOptional" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasPotency" eType="#//DataValue">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="NonNegativeInteger"/>
+        <details key="seedOptional" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataType" eSuperTypes="#//TranscendentOrdium">
+    <eAnnotations source="pem">
+      <details key="badge" value="DT"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataValue" abstract="true" eSuperTypes="#//TranscendentOrdium">
+    <eAnnotations source="pem">
+      <details key="badge" value="DV"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ofDataType" eType="#//DataType">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="DataType"/>
+        <details key="seedOptional" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="#//Clabject">
+    <eAnnotations source="pem">
+      <details key="badge" value="EN"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImmanentOrdium" abstract="true" eSuperTypes="#//Ordium"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Intercalation" eSuperTypes="#//Mediation">
+    <eAnnotations source="pem">
+      <details key="badge" value="IC"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isGeneralisation" eType="#//DataValue">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Boolean"/>
+        <details key="seedOptional" value="false"/>
+        <details key="seedDefault" value="false"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Invocation" eSuperTypes="#//BehaviouralOrdium">
+    <eAnnotations source="pem">
+      <details key="badge" value="IN"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="calls" eType="#//Ordium">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Ordium"/>
+        <details key="seedOptional" value="false"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Literal" eSuperTypes="#//TranscendentOrdium">
+    <eAnnotations source="pem">
+      <details key="badge" value="LI"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasLexeme" eType="#//Ordium">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Ordium"/>
+        <details key="seedOptional" value="false"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Marker" eSuperTypes="#//TranscendentOrdium">
+    <eAnnotations source="pem">
+      <details key="badge" value="MK"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasTag" eType="#//DataValue">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="DataValue"/>
+        <details key="seedOptional" value="false"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refersTo" eType="#//Ordium">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Ordium"/>
+        <details key="seedOptional" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Mediation" abstract="true" eSuperTypes="#//ImmanentOrdium">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasRelatum" eType="#//Ordium">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Ordium"/>
+        <details key="seedOptional" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Method" eSuperTypes="#//Moment">
+    <eAnnotations source="pem">
+      <details key="badge" value="ME"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isRealisedBy" eType="#//Ordium">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Ordium"/>
+        <details key="seedOptional" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Moment" abstract="true" eSuperTypes="#//ImmanentOrdium">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasDurability" eType="#//DataValue">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="NonNegativeInteger"/>
+        <details key="seedOptional" value="false"/>
+        <details key="seedDefault" value="0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasMutability" eType="#//DataValue">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="NonNegativeInteger"/>
+        <details key="seedOptional" value="false"/>
+        <details key="seedDefault" value="0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="#//BehaviouralOrdium">
+    <eAnnotations source="pem">
+      <details key="badge" value="OP"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasReturnType" eType="#//Ordium">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Ordium"/>
+        <details key="seedOptional" value="false"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="#//BehaviouralOrdium">
+    <eAnnotations source="pem">
+      <details key="badge" value="PM"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasType" eType="#//Ordium">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Ordium"/>
+        <details key="seedOptional" value="false"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isExistential" eType="#//DataValue">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Boolean"/>
+        <details key="seedOptional" value="false"/>
+        <details key="seedDefault" value="false"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Participation" eSuperTypes="#//Mediation">
+    <eAnnotations source="pem">
+      <details key="badge" value="PA"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasLowerBound" eType="#//DataValue">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Multiplicity"/>
+        <details key="seedOptional" value="false"/>
+        <details key="seedDefault" value="0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasRoleName" eType="#//DataValue">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="String"/>
+        <details key="seedOptional" value="false"/>
+        <details key="seedDefault" value="§"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasUpperBound" eType="#//DataValue">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Multiplicity"/>
+        <details key="seedOptional" value="false"/>
+        <details key="seedDefault" value="Unlimited"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isNavigableTo" eType="#//DataValue">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Boolean"/>
+        <details key="seedOptional" value="false"/>
+        <details key="seedDefault" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isOrdered" eType="#//DataValue">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Boolean"/>
+        <details key="seedOptional" value="false"/>
+        <details key="seedDefault" value="false"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isUnique" eType="#//DataValue">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="Boolean"/>
+        <details key="seedOptional" value="false"/>
+        <details key="seedDefault" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relationship" eSuperTypes="#//Clabject">
+    <eAnnotations source="pem">
+      <details key="badge" value="RE"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasAssociationName" eType="#//DataValue">
+      <eAnnotations source="pem">
+        <details key="declaredType" value="String"/>
+        <details key="seedOptional" value="false"/>
+        <details key="seedDefault" value="§"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TranscendentOrdium" abstract="true" eSuperTypes="#//Ordium"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="ELocalDate" instanceClassName="java.time.LocalDate"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EOffsetDateTime" instanceClassName="java.time.OffsetDateTime"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EOffsetTime" instanceClassName="java.time.OffsetTime"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EDuration" instanceClassName="java.time.Duration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BinaryValueOccurrence" eSuperTypes="#//DataValue">
+    <eAnnotations source="pem">
+      <details key="representationOnly" value="true"/>
+      <details key="pamolaDataType" value="Binary"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByteArray"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ByteValueOccurrence" eSuperTypes="#//DataValue">
+    <eAnnotations source="pem">
+      <details key="representationOnly" value="true"/>
+      <details key="pamolaDataType" value="Byte"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByte"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CharacterValueOccurrence" eSuperTypes="#//DataValue">
+    <eAnnotations source="pem">
+      <details key="representationOnly" value="true"/>
+      <details key="pamolaDataType" value="Character"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DateValueOccurrence" eSuperTypes="#//DataValue">
+    <eAnnotations source="pem">
+      <details key="representationOnly" value="true"/>
+      <details key="pamolaDataType" value="Date"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//ELocalDate" unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DateTimeValueOccurrence" eSuperTypes="#//DataValue">
+    <eAnnotations source="pem">
+      <details key="representationOnly" value="true"/>
+      <details key="pamolaDataType" value="DateTime"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//EOffsetDateTime" unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DecimalValueOccurrence" eSuperTypes="#//DataValue">
+    <eAnnotations source="pem">
+      <details key="representationOnly" value="true"/>
+      <details key="pamolaDataType" value="Decimal"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DurationValueOccurrence" eSuperTypes="#//DataValue">
+    <eAnnotations source="pem">
+      <details key="representationOnly" value="true"/>
+      <details key="pamolaDataType" value="Duration"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//EDuration" unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FQNValueOccurrence" eSuperTypes="#//DataValue">
+    <eAnnotations source="pem">
+      <details key="representationOnly" value="true"/>
+      <details key="pamolaDataType" value="FQN"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Float32ValueOccurrence" eSuperTypes="#//DataValue">
+    <eAnnotations source="pem">
+      <details key="representationOnly" value="true"/>
+      <details key="pamolaDataType" value="Float32"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Float64ValueOccurrence" eSuperTypes="#//DataValue">
+    <eAnnotations source="pem">
+      <details key="representationOnly" value="true"/>
+      <details key="pamolaDataType" value="Float64"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IRIValueOccurrence" eSuperTypes="#//DataValue">
+    <eAnnotations source="pem">
+      <details key="representationOnly" value="true"/>
+      <details key="pamolaDataType" value="IRI"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntegerValueOccurrence" eSuperTypes="#//DataValue">
+    <eAnnotations source="pem">
+      <details key="representationOnly" value="true"/>
+      <details key="pamolaDataType" value="Integer"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MultiplicityValueOccurrence" eSuperTypes="#//DataValue">
+    <eAnnotations source="pem">
+      <details key="representationOnly" value="true"/>
+      <details key="pamolaDataType" value="Multiplicity"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NameValueOccurrence" eSuperTypes="#//DataValue">
+    <eAnnotations source="pem">
+      <details key="representationOnly" value="true"/>
+      <details key="pamolaDataType" value="Name"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NonNegativeIntegerValueOccurrence" eSuperTypes="#//DataValue">
+    <eAnnotations source="pem">
+      <details key="representationOnly" value="true"/>
+      <details key="pamolaDataType" value="NonNegativeInteger"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PIDValueOccurrence" eSuperTypes="#//DataValue">
+    <eAnnotations source="pem">
+      <details key="representationOnly" value="true"/>
+      <details key="pamolaDataType" value="PID"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringValueOccurrence" eSuperTypes="#//DataValue">
+    <eAnnotations source="pem">
+      <details key="representationOnly" value="true"/>
+      <details key="pamolaDataType" value="String"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeValueOccurrence" eSuperTypes="#//DataValue">
+    <eAnnotations source="pem">
+      <details key="representationOnly" value="true"/>
+      <details key="pamolaDataType" value="Time"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//EOffsetTime" unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DefinedDataValue" eSuperTypes="#//DataValue">
+    <eAnnotations source="pem">
+      <details key="representationOnly" value="true"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TupleDataValue" eSuperTypes="#//DataValue">
+    <eAnnotations source="pem">
+      <details key="representationOnly" value="true"/>
+    </eAnnotations>
+  </eClassifiers>
+</ecore:EPackage>
