@@ -3,6 +3,7 @@ import java.io.File;
 import tools.vitruv.pamola.cad.Unit;
 import tools.vitruv.pamola.cad.NumericParameter;
 import tools.vitruv.pamola.pem.Attribute;
+import tools.vitruv.pamola.pem.Entity;
 
 import "https://pamola.org/kernel/pem/1.0" as pamola
 import "http://www.example.org/cad" as cad
@@ -69,12 +70,16 @@ routine mirrorIntegerValue(pamola::IntegerValueOccurrence iv) {
     val np = new cad::NumericParameter
   }
   update {
-    // walk value -> owning Attribute -> per-feature knowledge (display name)
+    // walk value -> owning Attribute -> owning Entity (the instance)
     val attr = iv.eContainer as Attribute
-    val cadName = switch (attr.hasName) {
-      case "minimumThicknessInMM": "Minimum Thickness"
-      case "brakeDiskThicknessInMM": "Brake Disk Thickness"
-      case "diameterInMM": "Diameter"
+    val owner = attr.eContainer as Entity
+    // per-feature knowledge, resolved by the feature's fully qualified name
+    // (declared type + attribute), i.e. the classifier-level feature
+    val featureFqn = owner.hasDeclaredType.hasName + "." + attr.hasName
+    val cadName = switch (featureFqn) {
+      case "BrakeDisk.minimumThicknessInMM": "Minimum Thickness"
+      case "BrakeDisk.brakeDiskThicknessInMM": "Brake Disk Thickness"
+      case "BrakeDisk.diameterInMM": "Diameter"
       default: attr.hasName
     }
     var p = ns.parameters.findFirst[name == cadName] as NumericParameter

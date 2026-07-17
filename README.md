@@ -47,10 +47,13 @@ routine mirrorIntegerValue(pamola::IntegerValueOccurrence iv) {
   }
   update {
     val attr = iv.eContainer as Attribute
-    val cadName = switch (attr.hasName) {
-      case "minimumThicknessInMM": "Minimum Thickness"
-      case "brakeDiskThicknessInMM": "Brake Disk Thickness"
-      case "diameterInMM": "Diameter"
+    val owner = attr.eContainer as Entity
+    // per-feature knowledge resolved by the feature's fully qualified name
+    val featureFqn = owner.hasDeclaredType.hasName + "." + attr.hasName
+    val cadName = switch (featureFqn) {
+      case "BrakeDisk.minimumThicknessInMM": "Minimum Thickness"
+      case "BrakeDisk.brakeDiskThicknessInMM": "Brake Disk Thickness"
+      case "BrakeDisk.diameterInMM": "Diameter"
       default: attr.hasName
     }
     var p = ns.parameters.findFirst[name == cadName] as NumericParameter
