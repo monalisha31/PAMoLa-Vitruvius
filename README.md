@@ -90,16 +90,10 @@ mvn -pl vsum test    # run the test
 In Eclipse (with EMF and the Vitruvius setup, see
 https://github.com/vitruv-tools):
 
-1. Import the four modules as existing Maven projects.
-2. To generate the model code, open `model/src/main/ecore/pem.genmodel` (and
+1. To generate the model code, open `model/src/main/ecore/pem.genmodel` (and
    `cad.genmodel`) and choose *Generate Model Code*, or run
    `model/workflow/generate.mwe2` as an MWE2 Workflow.
-3. The reactions are compiled by the build in the `consistency` module.
-4. Run `PamolaVsumTest` in the `vsum` module as a JUnit test.
+2. The reactions are compiled by the build in the `consistency` module.
+3. Run `PamolaVsumTest` in the `vsum` module as a JUnit test.
 
-## Sources
 
-- PEM: PAMoLa kernel-core.
-- CAD metamodel and the original per-attribute reactions: brake-system case
-  study (ASEW 2025).
-- Project structure: Vitruvius Methodologist Template.
