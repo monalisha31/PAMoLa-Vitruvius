@@ -5,14 +5,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <!-- Build Parent -->
   <parent>
     <groupId>tools.vitruv</groupId>
     <artifactId>parent</artifactId>
     <version>4.0.0</version>
   </parent>
 
-  <!-- Project Information -->
   <artifactId>tools.vitruv.methodologisttemplate</artifactId>
   <version>0.1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
@@ -20,7 +18,6 @@
   <name>Methodologist Template</name>
   <description />
 
-  <!-- Modules -->
   <modules>
     <module>viewtype</module>
     <module>model</module>
@@ -34,7 +31,6 @@
 
   <dependencyManagement>
     <dependencies>
-      <!-- Vitruvius dependencies -->
       <dependency>
         <groupId>tools.vitruv</groupId>
         <artifactId>tools.vitruv.change.atomic</artifactId>
@@ -76,7 +72,6 @@
         <version>${vitruv.version}</version>
       </dependency>
 
-      <!-- external dependencies-->
       <dependency>
         <groupId>org.eclipse.emf</groupId>
         <artifactId>org.eclipse.emf.common</artifactId>

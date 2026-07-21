@@ -16,9 +16,7 @@
     <name>Vsum</name>
     <description />
 
-
     <dependencies>
-        <!-- project dependencies -->
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>tools.vitruv.methodologisttemplate.model</artifactId>
@@ -30,7 +28,6 @@
             <version>${project.version}</version>
         </dependency>
 
-        <!-- Vitruvius dependencies -->
         <dependency>
             <groupId>tools.vitruv</groupId>
             <artifactId>tools.vitruv.change.interaction</artifactId>
@@ -52,7 +49,6 @@
             <artifactId>tools.vitruv.framework.vsum</artifactId>
         </dependency>
 
-        <!-- external dependencies -->
         <dependency>
             <groupId>org.eclipse.emf</groupId>
             <artifactId>org.eclipse.emf.ecore</artifactId>

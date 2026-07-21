@@ -16,9 +16,7 @@
   <name>Viewtype</name>
   <description />
 
-
   <dependencies>
-    <!-- Vitruvius dependencies -->
     <dependency>
       <groupId>tools.vitruv</groupId>
       <artifactId>tools.vitruv.change.atomic</artifactId>
